@@ -74,7 +74,7 @@ namespace ApiCustomer.Controllers
 
         #region method
         /// <summary>
-        /// get example data for add to cart method
+        /// get example data for add or update to cart method
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -86,15 +86,29 @@ namespace ApiCustomer.Controllers
         }
 
         /// <summary>
-        /// add to shopping cart
+        /// add or update to shopping cart
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     POST api/Customer/AddOrUpdateCart
+        ///     {        
+        ///       "customerId": 1,
+        ///       "sku": "1000",
+        ///       "quantity": 1
+        ///     }
+        /// </remarks>
         /// <param name="customerId"></param>
         /// <param name="sku"></param>
         /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <returns>A newly created employee</returns>
+        /// <response code="200">Returns the newly created or update  item</response>
+        /// <response code="400">exception</response>    
         // POST: api/Customer
         [HttpPost]
-        public ApiResultModel<bool> AddShoppingCart(int customerId, string sku, int quantity)
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        public ApiResultModel<bool> AddOrUpdateCart(int customerId, string sku, int quantity)
         {
             ////validate params
             ValidateParams(customerId, sku, quantity, out ApiResultModel<bool> result);

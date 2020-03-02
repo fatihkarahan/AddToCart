@@ -17,6 +17,8 @@ using Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
+using System.Reflection;
 
 namespace ApiCustomer
 {
@@ -70,6 +72,10 @@ namespace ApiCustomer
                         Url = new Uri("https://www.apache.org/licenses/LICENSE-2.0.html")
                     }
                 });
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
             services.AddMemoryCache();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

@@ -39,7 +39,7 @@ namespace Services.Services
             ShoppingCart model = new ShoppingCart();
             ObjectMapper.Mapper.Map<ShoppingCartModel, ShoppingCart>(shoppingCartModel, model);
 
-            await _shoppingCartRepository.AddAsync(model);
+           var resp = await _shoppingCartRepository.AddAsync(model);
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ namespace UnitTest.Pages
         #endregion
 
         /// <summary>
-        /// add to cart test
+        /// add orupdate to cart example data test
         /// </summary>
         /// <returns></returns>
         [Fact]
@@ -44,13 +44,13 @@ namespace UnitTest.Pages
         }
 
         /// <summary>
-        /// add to cart test
+        /// add or update to cart test
         /// </summary>
         /// <returns></returns>
         [Fact]
         public async Task Add_To_Cart()
         {
-            var response = await client.PostAsync("https://localhost:44377", new StringContent("/api/Customer/AddShoppingCart?customerId=1&sku=1001&quantity=1", Encoding.UTF8, "application/json"));
+            var response = await client.PostAsync("https://localhost:44377", new StringContent("/api/Customer/AddOrUpdateCart?customerId=1&sku=1001&quantity=1", Encoding.UTF8, "application/json"));
             response.EnsureSuccessStatusCode();
             var stringResponse = response.Content.ReadAsStringAsync();
 
