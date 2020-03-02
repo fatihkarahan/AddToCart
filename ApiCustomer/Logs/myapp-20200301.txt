@@ -1,0 +1,6 @@
+2020-03-01T21:10:40.6201020+03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-01T21:10:40.6603418+03:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-01T21:10:40.6665992+03:00  [INF] Content root path: "C:\Users\Fatih\source\repos\ciceksepeti\ApiCustomer" (b5d60022)
+2020-03-01T21:26:27.8388205+03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-01T21:26:27.8551970+03:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-01T21:26:27.8630228+03:00  [INF] Content root path: "C:\Users\Fatih\source\repos\AddToCart\ApiCustomer" (b5d60022)
